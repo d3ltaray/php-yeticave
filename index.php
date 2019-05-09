@@ -132,7 +132,7 @@ function priceFormat ($price){
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
-            <?php foreach ($lots as $lotKey => $lotValue): ?>
+            <?php foreach ($lots as $lotKey => $lotValue): ?>`
             <li class="lots__item lot">
                 <div class="lot__image">
                     <img src="<?=$lotValue['imgUrl'] ?>" width="350" height="260" alt="<?=$lotValue['name'] ?>">
