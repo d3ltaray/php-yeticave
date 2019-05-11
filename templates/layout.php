@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?=$array['title']; ?></title>
+    <title><?=$title; ?></title>
     <link href="css/normalize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -43,13 +43,13 @@
 </header>
 
 <main class="container">
-    <?=$array['content'] ; ?>
+    <?=$content; ?>
 </main>
 
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <?php foreach ($array['categories'] as $val): ?>
+            <?php foreach ($categories as $val): ?>
                 <li class="nav__item">
                     <a href="<?=$val ?>"><?=$val ?></a>
                 </li>

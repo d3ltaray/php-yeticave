@@ -51,3 +51,8 @@ $lots = [
         'imgUrl' => 'img/lot-6.jpg'
     ],
 ];
+
+$is_auth = (bool) rand(0, 1);
+
+$user_name = 'Владимир';
+$user_avatar = 'img/user.jpg';

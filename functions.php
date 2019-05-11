@@ -3,6 +3,7 @@
 function tplRender($path, $array){
     if(file_exists($path)){
         ob_start();
+        extract($array);
         require_once "$path";
         $html = ob_get_clean();
         return $html;
