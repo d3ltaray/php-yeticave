@@ -30,18 +30,18 @@
         <?php foreach ($lots as $lotVal): ?>
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="<?=$lotVal['imgUrl'] ?>" width="350" height="260" alt="<?=$lotVal['name'] ?>">
+                    <img src="<?=htmlspecialchars($lotVal['imgUrl']);?>" width="350" height="260" alt="<?=htmlspecialchars($lotVal['name']); ?>">
                 </div>
                 <div class="lot__info">
-                    <span class="lot__category"><?=$lotVal['cat'] ?></span>
-                    <h3 class="lot__title"><a class="text-link" href="lot.html"><?=$lotVal['name'] ?></a></h3>
+                    <span class="lot__category"><?=htmlspecialchars($lotVal['cat']);?></span>
+                    <h3 class="lot__title"><a class="text-link" href="lot.html"><?=htmlspecialchars($lotVal['name']); ?></a></h3>
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=priceFormat($lotVal['price']); ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=priceFormat(htmlspecialchars($lotVal['price'])); ?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
-
+                            <?=lotTimeRemain('tomorrow'); ?>
                         </div>
                     </div>
                 </div>
