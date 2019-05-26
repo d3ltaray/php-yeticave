@@ -3,15 +3,16 @@
  * $path - путь к шаблону, $array - массив с данными для шаблона
  * $html - итоговый HTML.
  */
-function tplRender($path, $array){
+function tplRender($path, array $array){
+    $result = '';
     if(file_exists($path)){
         ob_start();
         extract($array);
         require_once "$path";
-        $html = ob_get_clean();
-        return $html;
+        $result = ob_get_clean();
+        return $result;
     } else {
-        return null;
+        return $result;
     }
 }
 
@@ -42,4 +43,11 @@ function lotTimeRemain($date){
     $timeRemaining = str_pad($hours, 2, "0", STR_PAD_LEFT) . ":" .
         str_pad($minutes, 2, "0", STR_PAD_LEFT);
     return $timeRemaining;
+}
+
+
+function is_date_valid($date){
+    $format_to_check = 'd-m-Y';
+    $dateTimeObj = date_create_from_format($format_to_check, $date);
+    return $dateTimeObj !== false && array_sum(date_get_last_errors()) === 0;
 }
